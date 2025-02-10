@@ -5,9 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
             document.getElementById("splash-screen").style.display = "none"; // Hide splash screen
             document.getElementById("welcome-screen").style.display = "flex"; // Show welcome screen
-
-            // Start typing animation for welcome text
-            startTypingAnimation("typing-text", "Welcome!");
+            startTypingAnimation("typing-text", "Welcome!"); // Start typing animation
         }, 1000); // After 1 second delay, hide splash screen
     }, 3000); // Wait 3 seconds before starting transition
 
@@ -48,4 +46,5 @@ function startTypingAnimation(elementId, text) {
 // Redirect Function
 function redirectTo(url) {
     window.location.href = url;
+} window.location.href = url;
 }}
