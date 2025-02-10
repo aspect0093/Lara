@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Splash Screen */
+#splash-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1s ease-out;
+}
+
+#splash-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+#splash-text {
+    font-size: 24px;
+    margin-top: 10px;
+    font-weight: bold;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Made by X Text */
+#splash-footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.7;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Welcome Screen */
+#welcome-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#typing-text {
+    font-size: 32px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid white;
+    animation: typing 3s steps(20, end), blink 1s infinite;
+}
+
+#swipe-up {
+    position: absolute;
+    bottom: 20px;
+    font-size: 18px;
+    opacity: 0.7;
+}
+
+/* Main Page */
+#main-page {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Make the profile image circular */
+#profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;  /* Ensures a perfect circle */
+    object-fit: cover;  /* Ensures the image fits within the circle */
+    border: 2px solid white; /* Optional: Adds a border around the image */
+}
+
+.buttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.buttons button:hover {
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
