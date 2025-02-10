@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("welcome-screen").style.display = "flex";
 
             // Start typing animation
-            startTypingAnimation("typing-text", "Welcome to the Site!");
+            startTypingAnimation("typing-text", "Welcome!");
         }, 1000);
     }, 3000);
 
@@ -48,4 +48,5 @@ function startTypingAnimation(elementId, text) {
 // Redirect Function
 function redirectTo(url) {
     window.location.href = url;
+}ref = url;
 }
