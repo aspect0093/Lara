@@ -3,117 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lara</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Lara's Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: #121212; /* Dark background */
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0;
+            overflow-y: auto;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .container {
+            text-align: center;
+            padding: 4rem;
+            background: rgba(0, 0, 0, 0.85); /* Darker container */
+            border-radius: 25px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+            width: 100%;
+            max-width: 900px;
+            margin-top: 50px;
+            position: relative;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        h1 {
+            font-size: 4em;
+            margin-bottom: 2rem;
+            color: #fff;
+            font-weight: 600;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        /* Profile Section - Image and Name in Same Area */
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            animation: slideInUp 1s ease-in-out;
+        }
+
+        .profile-section .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #555;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .profile-section .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-section .profile-name {
+            font-size: 2.5em;
+            color: #fff;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .button-container {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideInUp 1.5s ease-in-out;
+        }
+
+        .btn {
+            padding: 1.5rem 4rem;
+            font-size: 1.4em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(45deg, #ff6a00, #ee0979);
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Slide-in from the left for the profile section */
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Slide-up animation for buttons */
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile-friendly design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.8em;
+            }
+
+            .btn {
+                padding: 1rem 3rem;
+                font-size: 1.2em;
+            }
+
+            .profile-section {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .profile-section .profile-name {
+                font-size: 2.2em;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Splash Screen -->
-    <div class="splash">
-        <img src="https://media.discordapp.net/attachments/1330537072951296096/1338512788045303819/Picsart_25-02-10_19-41-23-248.png?ex=67ab5aad&is=67aa092d&hm=4e7eb47e87f58fdbe60280777452e2a60a03bde290d4dc22e05f7f07f4670cb7&" alt="Custom Image">
-        <h1 class="game-title">Lara</h1>
-    </div>
-
-    <!-- Main Content -->
     <div class="container">
         <h1>Welcome</h1>
-        <div class="profile">
-            <img src="https://media.discordapp.net/attachments/1330537072951296096/1338512788045303819/Picsart_25-02-10_19-41-23-248.png?ex=67ab5aad&is=67aa092d&hm=4e7eb47e87f58fdbe60280777452e2a60a03bde290d4dc22e05f7f07f4670cb7&" alt="Custom Image">
-            <div class="custom-text">
-                <h2>Custom Text</h2>
-                <hr>
+
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <div class="profile-image">
+                <img src="https://media.discordapp.net/attachments/1330537072951296096/1338512788045303819/Picsart_25-02-10_19-41-23-248.png?ex=67ab5aad&is=67aa092d&hm=4e7eb47e87f58fdbe60280777452e2a60a03bde290d4dc22e05f7f07f4670cb7&" alt="Profile Image">
             </div>
+            <div class="profile-name">Lara</div>
         </div>
 
-        <!-- Buttons -->
-        <div class="buttons">
-            <button onclick="redirectTo('https://discord.com/oauth2/authorize?client_id=1338143657877835797&permissions=8&integration_type=0&scope=bot')">Invite</button>
-            <button onclick="redirectTo('https://discord.gg/TYMVHDZ3T8')">Partners</button>
-            <button onclick="redirectTo('https://docs.google.com/forms/d/e/1FAIpQLSeORFe4lpAfudvhLyUz2lttYyrjVzwXsnem0IxJnCau5N1QCg/viewform?usp=header')">Suggestions</button>
-        </div>
-
-        <!-- Footer -->
-        <footer>
-            Made by X
-        </footer>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html></button>
-            <button onclick="window.location.href='info.html'">Info</button>
+        <div class="button-container">
+            <a href="https://discord.com/oauth2/authorize?client_id=1338143657877835797&permissions=8&integration_type=0&scope=bot" class="btn">Invite</a>
+            <a href="https://discord.gg/TYMVHDZ3T8" class="btn">Partners</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeORFe4lpAfudvhLyUz2lttYyrjVzwXsnem0IxJnCau5N1QCg/viewform?usp=header" class="btn">Suggestions</a>
         </div>
     </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
-'Navigation disabled')">Info</button>  <!-- Changed to alert instead of navigation -->
-        </div>
-    </div>
-
-    <!-- Info Page -->
-    <div id="info-page" style="display:none;">
-        <div class="info-container">
-            <h2>Title: Bot Help List</h2>
-            <p>🌟 Ultimate Bot Commands</p>
-            <p>Bot Prefix "-"</p>
-            <ul>
-                <li>-help</li>
-            </ul>
-
-            <h3>💰 Economy</h3>
-            <ul>
-                <li>-balance, -work, -daily</li>
-                <li>-pay @user &lt;amount&gt;</li>
-            </ul>
-
-            <h3>📞 Userphone</h3>
-            <ul>
-                <li>-setphone &lt;number&gt;</li>
-                <li>-call &lt;number&gt;</li>
-                <li>-sms &lt;number&gt; &lt;message&gt;</li>
-            </ul>
-
-            <h3>🎲 Random Chat</h3>
-            <ul>
-                <li>-randomchat, -hangup</li>
-                <li>-setcallchannel &lt;#channel&gt;</li>
-            </ul>
-
-            <h3>💍 Social</h3>
-            <ul>
-                <li>-marry @user</li>
-                <li>-divorce</li>
-                <li>-profile</li>
-                <li>-setbirthday &lt;MM-DD&gt;</li>
-                <li>-adopt @user</li>
-            </ul>
-
-            <h3>⚙️ Admin</h3>
-            <ul>
-                <li>-toggle &lt;feature&gt; &lt;on/off&gt;</li>
-                <li>-settings</li>
-                <li>-setlevelchannel &lt;#channel&gt;</li>
-                <li>-setcountingchannel &lt;#channel&gt;</li>
-                <li>-smartcounting &lt;on/off&gt;</li>
-                <li>-startgiveaway &lt;duration&gt; &lt;winners&gt; &lt;prize&gt;</li>
-            </ul>
-
-            <h3>📊 Leveling</h3>
-            <ul>
-                <li>-level</li>
-            </ul>
-
-            <h3>🔢 Counting Game</h3>
-            <ul>
-                <li>-setcountingchannel &lt;#channel&gt;</li>
-                <li>-smartcounting &lt;on/off&gt;</li>
-                <li>Enabled in set channel</li>
-            </ul>
-        </div>
-        <button id="back-button" onclick="alert('Navigation disabled')">< Back</button>  <!-- Changed to alert instead of navigation -->
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
