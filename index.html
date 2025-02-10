@@ -1,16 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Welcome Page</title>
+    <title>Lara</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Splash Screen -->
     <div id="splash-screen">
-        <img id="splash-image" src="https://media.discordapp.net/attachments/1330537072951296096/1338433038056558663/a8479a922b151b03df56a6db105dc5dd.jpg?ex=67ab1067&is=67a9bee7&hm=e15a978c99a38542d2d131b0a4d6bb512c813ab4b4eed24e282efe1fa7b2b7e8&" alt="Custom Image">
+        <img id="splash-image" src="https://media.discordapp.net/attachments/1330537072951296096/1338433038056558663/a8479a922b151b03df56a6db105dc5dd.jpg" alt="Splash Image">
         <p id="splash-text">Lara</p>
         <p id="splash-footer">Made by X</p>
     </div>
@@ -25,19 +26,26 @@
     <div id="main-page" style="display:none;">
         <h1>Welcome</h1>
         <div class="profile">
-            <img id="profile-img" src="https://media.discordapp.net/attachments/1330537072951296096/1338433038056558663/a8479a922b151b03df56a6db105dc5dd.jpg?ex=67ab1067&is=67a9bee7&hm=e15a978c99a38542d2d131b0a4d6bb512c813ab4b4eed24e282efe1fa7b2b7e8&" alt="User Image">
+            <img id="profile-img" src="https://media.discordapp.net/attachments/1330537072951296096/1338433038056558663/a8479a922b151b03df56a6db105dc5dd.jpg" alt="User Image">
             <p id="custom-text">Lara</p>
         </div>
         <div class="buttons">
-            <button onclick="redirectTo('https://discord.com/oauth2/authorize?client_id=1338143657877835797&permissions=8&integration_type=0&scope=bot')">Invite</button>
+            <button onclick="redirectTo('https://discord.com/oauth2/authorize?client_id=1338143657877835797&permissions=8&scope=bot')">Invite</button>
             <button onclick="redirectTo('https://forms.gle/yFaWXjF4PFgiHD349')">Suggestions</button>
             <button onclick="redirectTo('https://docs.google.com/forms/d/e/1FAIpQLSdeOlfXJanKUKXDQpbPbSqwJhdfo0CJ7eXbEI54CLVpJNaNvw/viewform?usp=header')">Feedback</button>
-            <!-- New buttons -->
-            <button class="partner-button" onclick="redirectTo('https://discord.gg/TYMVHDZ3T8')">Partner Servers</button>
+            <button onclick="redirectTo('https://discord.gg/TYMVHDZ3T8')">Partner Servers</button>
+            <button onclick="redirectTo('info.html')">Info</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>  <button class="partner-button" onclick="redirectTo('https://discord.gg/TYMVHDZ3T8')">Partner Servers</button>
             <button class="info-button" onclick="redirectTo('info.html')">Info</button>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
+</html></body>
 </html>
