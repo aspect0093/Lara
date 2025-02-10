@@ -6,10 +6,10 @@ body, html {
     width: 100%;
     height: 100%;
     font-family: 'Poppins', sans-serif;
-    background-color: #121212; /* Dark background for a sleek look */
+    background-color: #121212;
     color: #fff;
     text-align: center;
-    overflow-y: auto; /* Allow scrolling */
+    overflow-y: auto;
 }
 
 /* Splash Screen */
@@ -49,76 +49,94 @@ body, html {
     animation: fadeIn 2s ease-in-out;
 }
 
-/* Welcome Screen */
-#welcome-screen {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: #121212;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#typing-text {
-    font-size: 32px;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid white;
-    animation: typing 3s steps(20, end), blink 1s infinite;
-    display: inline-block;
-}
-
-#swipe-up {
-    position: absolute;
-    bottom: 20px;
-    font-size: 18px;
-    opacity: 0.7;
-}
-
-/* Main Page */
-#main-page {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-/* Make the profile image circular */
-#profile-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid white;
-}
-
-/* Buttons Styling */
-.buttons button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 18px;
-    background: #1a73e8; /* Modern blue background for buttons */
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: transform 0.2s, background-color 0.3s;
-}
-
-.buttons button:hover {
-    transform: scale(1.1);
-    background-color: #0c5dbd; /* Slight darkening on hover */
-}
-
-/* Commands List Page (Info Page) */
+/* Info Page */
 #info-page {
     padding: 20px;
     margin-top: 80px;
     max-width: 800px;
     margin-left: auto;
+    margin-right: auto;
+    overflow-y: auto;
+    background-color: #222222;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.commands-list {
+    text-align: left;
+    font-size: 1.1rem;
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+.commands-list p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.7;
+    z-index: 10;
+    padding: 10px;
+}
+
+/* Footer Blur Box */
+.footer-blur {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    color: white;
+    font-size: 16px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #1a73e8;
+}
+
+/* Back Button Styling */
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.back-button:hover {
+    color: #1a73e8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}t: auto;
     margin-right: auto;
     overflow-y: auto;
     background-color: #222222; /* Slightly lighter background for info page */
