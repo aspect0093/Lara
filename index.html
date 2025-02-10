@@ -4,52 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lara</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <!-- Splash Screen -->
-    <div id="splash-screen">
-        <img id="splash-image" src="https://media.discordapp.net/attachments/1330537072951296096/1338433038056558663/a8479a922b151b03df56a6db105dc5dd.jpg?ex=67ab1067&is=67a9bee7&hm=e15a978c99a38542d2d131b0a4d6bb512c813ab4b4eed24e282efe1fa7b2b7e8&" alt="Custom Image">
-        <p id="splash-text">Lara</p>
-        <p id="splash-footer">Made by X</p>
+    <div class="splash">
+        <img src="https://media.discordapp.net/attachments/1330537072951296096/1338512788045303819/Picsart_25-02-10_19-41-23-248.png?ex=67ab5aad&is=67aa092d&hm=4e7eb47e87f58fdbe60280777452e2a60a03bde290d4dc22e05f7f07f4670cb7&" alt="Custom Image">
+        <h1 class="game-title">Lara</h1>
     </div>
 
-    <!-- Welcome Page -->
-    <div id="welcome-screen">
-        <h1 id="typing-text"></h1>
-        <p id="swipe-up">Swipe Up </p>
-    </div>
-
-    <!-- Main Page -->
-    <div id="main-page">
+    <!-- Main Content -->
+    <div class="container">
         <h1>Welcome</h1>
         <div class="profile">
-            <img id="profile-img" src="https://media.discordapp.net/attachments/1330537072951296096/1338433038056558663/a8479a922b151b03df56a6db105dc5dd.jpg?ex=67ab1067&is=67a9bee7&hm=e15a978c99a38542d2d131b0a4d6bb512c813ab4b4eed24e282efe1fa7b2b7e8&" alt="User Image">
-            <p id="custom-text">Lara</p>
+            <img src="https://media.discordapp.net/attachments/1330537072951296096/1338512788045303819/Picsart_25-02-10_19-41-23-248.png?ex=67ab5aad&is=67aa092d&hm=4e7eb47e87f58fdbe60280777452e2a60a03bde290d4dc22e05f7f07f4670cb7&" alt="Custom Image">
+            <div class="custom-text">
+                <h2>Custom Text</h2>
+                <hr>
+            </div>
         </div>
+
+        <!-- Buttons -->
         <div class="buttons">
             <button onclick="redirectTo('https://discord.com/oauth2/authorize?client_id=1338143657877835797&permissions=8&integration_type=0&scope=bot')">Invite</button>
-            <button onclick="redirectTo('https://forms.gle/TU9SxCcrH41obCb68')">Suggestion</button>
-            <button onclick="redirectTo('https://discord.gg/TYMVHDZ3T8')">Partner Server</button>
+            <button onclick="redirectTo('https://discord.gg/TYMVHDZ3T8')">Partners</button>
+            <button onclick="redirectTo('https://docs.google.com/forms/d/e/1FAIpQLSeORFe4lpAfudvhLyUz2lttYyrjVzwXsnem0IxJnCau5N1QCg/viewform?usp=header')">Suggestions</button>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            Made by X
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html></button>
+            <button onclick="window.location.href='info.html'">Info</button>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
+'Navigation disabled')">Info</button>  <!-- Changed to alert instead of navigation -->
         </div>
+    </div>
+
+    <!-- Info Page -->
+    <div id="info-page" style="display:none;">
+        <div class="info-container">
+            <h2>Title: Bot Help List</h2>
+            <p>🌟 Ultimate Bot Commands</p>
+            <p>Bot Prefix "-"</p>
+            <ul>
+                <li>-help</li>
+            </ul>
+
+            <h3>💰 Economy</h3>
+            <ul>
+                <li>-balance, -work, -daily</li>
+                <li>-pay @user &lt;amount&gt;</li>
+            </ul>
+
+            <h3>📞 Userphone</h3>
+            <ul>
+                <li>-setphone &lt;number&gt;</li>
+                <li>-call &lt;number&gt;</li>
+                <li>-sms &lt;number&gt; &lt;message&gt;</li>
+            </ul>
+
+            <h3>🎲 Random Chat</h3>
+            <ul>
+                <li>-randomchat, -hangup</li>
+                <li>-setcallchannel &lt;#channel&gt;</li>
+            </ul>
+
+            <h3>💍 Social</h3>
+            <ul>
+                <li>-marry @user</li>
+                <li>-divorce</li>
+                <li>-profile</li>
+                <li>-setbirthday &lt;MM-DD&gt;</li>
+                <li>-adopt @user</li>
+            </ul>
+
+            <h3>⚙️ Admin</h3>
+            <ul>
+                <li>-toggle &lt;feature&gt; &lt;on/off&gt;</li>
+                <li>-settings</li>
+                <li>-setlevelchannel &lt;#channel&gt;</li>
+                <li>-setcountingchannel &lt;#channel&gt;</li>
+                <li>-smartcounting &lt;on/off&gt;</li>
+                <li>-startgiveaway &lt;duration&gt; &lt;winners&gt; &lt;prize&gt;</li>
+            </ul>
+
+            <h3>📊 Leveling</h3>
+            <ul>
+                <li>-level</li>
+            </ul>
+
+            <h3>🔢 Counting Game</h3>
+            <ul>
+                <li>-setcountingchannel &lt;#channel&gt;</li>
+                <li>-smartcounting &lt;on/off&gt;</li>
+                <li>Enabled in set channel</li>
+            </ul>
+        </div>
+        <button id="back-button" onclick="alert('Navigation disabled')">< Back</button>  <!-- Changed to alert instead of navigation -->
     </div>
 
     <script src="script.js"></script>
 </body>
-</html></body>
-</html>s="partner-button" onclick="redirectTo('https://discord.gg/TYMVHDZ3T8')">Partner Servers</button>
-            <button class="info-button" onclick="redirectTo('info.html')">Info</button>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html></body>
 </html>

@@ -1,30 +1,76 @@
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Splash Screen Timer
+// Remove Splash Screen After Load
+window.onload = function() {
     setTimeout(() => {
-        document.getElementById("splash-screen").style.opacity = "0";
+        document.querySelector('.splash').classList.add('hidden');
+        document.querySelector('.container').style.display = 'block';
+    }, 2500);
+};
+
+// Button Redirects
+function redirectTo(url) {
+    window.location.href = url;
+} Out
+    setTimeout(() => {
+        splashScreen.style.opacity = '0'; // Fade out
         setTimeout(() => {
-            document.getElementById("splash-screen").style.display = "none";
-            document.getElementById("welcome-screen").style.display = "flex";
+            splashScreen.style.display = 'none';
+            blackScreen.style.display = 'flex';
 
-            // Start typing animation
-            startTypingAnimation("typing-text", "Welcome to the Site!");
-        }, 1000);
-    }, 3000);
+            // Typing Animation on Black Screen
+            const text = "Welcome";
+            let i = 0;
+            function typeWriter() {
+                if (i < text.length) {
+                    welcomeText.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100); // Adjust speed
+                } else {
+                    //Typing Complete
+                }
+            }
+            typeWriter();
 
-    // Swipe Up Gesture Detection
+        }, 1000); // Delay after fade out
+    }, 3000); // Adjust splash screen duration
+
+    // Swipe Up Functionality
     let touchStartY = 0;
-    let touchEndY = 0;
 
-    document.addEventListener("touchstart", (e) => {
+    blackScreen.addEventListener('touchstart', (e) => {
         touchStartY = e.touches[0].clientY;
     });
 
-    document.addEventListener("touchend", (e) => {
-        touchEndY = e.changedTouches[0].clientY;
-        if (touchStartY - touchEndY > 50) { // Swiping Up
-            document.getElementById("welcome-screen").style.display = "none";
-            document.getElementById("main-page").style.display = "flex";
+    blackScreen.addEventListener('touchend', (e) => {
+        const touchEndY = e.changedTouches[0].clientY;
+        const swipeDistance = touchStartY - touchEndY;
+
+        if (swipeDistance > 50) { // Adjust sensitivity
+            blackScreen.style.display = 'none';
+            mainPage.style.display = 'block';
+            // Add a class to trigger the fade-in effect
+            setTimeout(() => {
+                mainPage.classList.add('visible');
+            }, 50); // Small delay to ensure display is block
+        }
+    });
+});
+
+info page");
+    document.getElementById("main-page").style.display = "none";
+    document.getElementById("info-page").style.display = "block";
+}
+
+function goToMainPage() {
+    console.log("goToMainPage: Displaying main page");
+    document.getElementById("info-page").style.display = "none";
+    document.getElementById("main-page").style.display = "flex";
+}
+hiding welcome screen, showing main page"); // Debugging
+                welcomeScreen.style.display = "none"; // Hide welcome screen
+                mainPage.style.display = "flex"; // Show main page
+            } else {
+                console.error("Welcome screen or Main page element NOT found during swipe"); // Debugging
+            }
         }
     });
 });
@@ -32,24 +78,12 @@ document.addEventListener("DOMContentLoaded", function () {
 // Typing Animation Function
 function startTypingAnimation(elementId, text) {
     let element = document.getElementById(elementId);
-    let index = 0;
-
-    function typeCharacter() {
-        if (index < text.length) {
-            element.innerHTML += text.charAt(index);
-            index++;
-            setTimeout(typeCharacter, 100);
-        }
+    if (!element) {
+        console.error("Typing animation element NOT found"); // Debugging
+        return;
     }
 
-    element.innerHTML = "";
-    typeCharacter();
-}
-
-// Redirect Function
-function redirectTo(url) {
-    window.location.href = url;
-}ex = 0;
+    let index = 0;
 
     function typeCharacter() {
         if (index < text.length) {

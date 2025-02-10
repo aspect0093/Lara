@@ -1,220 +1,277 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
-
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    font-family: 'Poppins', sans-serif;
+/* General Styling */
+body {
     background-color: black;
     color: white;
+    font-family: Arial, sans-serif;
     text-align: center;
     overflow: hidden;
 }
 
 /* Splash Screen */
-#splash-screen {
+.splash {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: black;
+    background: black;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: opacity 1s ease-out;
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
 }
 
-#splash-image {
+.splash img {
     width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    height: auto;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.game-title {
+    font-size: 24px;
+    margin-top: 10px;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+/* Hide Splash After Animation */
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Main Content */
+.container {
+    display: none;
     animation: fadeIn 1.5s ease-in-out;
 }
 
-#splash-text {
-    font-size: 24px;
-    margin-top: 10px;
-    font-weight: bold;
-    animation: fadeIn 2s ease-in-out;
-}
-
-/* Made by X Text */
-#splash-footer {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    text-align: center;
-    font-size: 14px;
-    opacity: 0.7;
-    animation: fadeIn 2s ease-in-out;
-}
-
-/* Welcome Screen */
-#welcome-screen {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#typing-text {
-    font-size: 32px;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid white;
-    animation: typing 3s steps(20, end), blink 1s infinite;
-}
-
-#swipe-up {
-    position: absolute;
-    bottom: 20px;
-    font-size: 18px;
-    opacity: 0.7;
-}
-
-/* Main Page */
-#main-page {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-/* Make the profile image circular */
-#profile-img {
+.profile img {
     width: 100px;
     height: 100px;
-    border-radius: 50%;  /* Ensures a perfect circle */
-    object-fit: cover;  /* Ensures the image fits within the circle */
-    border: 2px solid white; /* Optional: Adds a border around the image */
+    border-radius: 50%;
+}
+
+.custom-text h2 {
+    margin: 0;
 }
 
 .buttons button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 18px;
     background: white;
     color: black;
+    padding: 10px 20px;
+    margin: 10px;
     border: none;
     cursor: pointer;
-    border-radius: 8px;
-    transition: transform 0.2s;
+    transition: transform 0.3s;
 }
 
 .buttons button:hover {
     transform: scale(1.1);
 }
 
-/* Animations */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink {
-    50% { border-color: transparent; }
-}d-color: #0c5dbd; /* Slight darkening on hover */
-}
-
-/* Footer with blur */
-.footer-blur {
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-    color: white;
-    font-size: 16px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-    border-top: 1px solid #1a73e8;
-    z-index: 999; /* Ensure it's above all content */
-}
-
-/* Back Button Styling */
-.back-button {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    font-size: 30px;
-    background: none;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    transition: color 0.3s ease;
-}
-
-.back-button:hover {
-    color: #1a73e8;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink {
-    50% { border-color: transparent; }
-}
-
-/* Info Page Styling */
-#info-page {
-    padding: 20px;
-    margin-top: 20px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    overflow-y: auto;
-    background-color: #222222;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    position: relative;
-}
-
-.commands-list h2 {
-    font-size: 20px;
-    margin-top: 20px;
-}
-
-.commands-list p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
-
+/* Footer */
 footer {
-    position: fixed;
-    bottom: 10px;
-    width: 100%;
-    text-align: center;
-    font-size: 14px;
+    margin-top: 20px;
+    font-size: 12px;
     opacity: 0.7;
 }
 
-/* Motion Blur and Smooth Scroll Effect */
-body {
-    transition: all 0.3s ease-in-out; /* Add smooth transitions */
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}ize: 0.8em;
+    color: #777;
 }
 
-html {
-    scroll-behavior: smooth;
+/* Black Screen */
+#black-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    text-align: center;
+}
+
+#welcome-text {
+    overflow: hidden; /* Ensures the text is in single line */
+    white-space: nowrap; /* Keeps the text from wrapping */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: 0.15em; /* Adjust letter spacing */
+}
+
+#swipe-up {
+    position: absolute;
+    bottom: 30px;
+    font-size: 1.2em;
+    color: #fff;
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    from {transform: scale(1);}
+    to {transform: scale(1.1);}
+}
+
+/* Main Page */
+#main-page {
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#main-page.visible {
+    opacity: 1;
+}
+
+#main-page h1 {
+    color: #007bff; /* Primary color */
+}
+
+.image-lara-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.image-lara-container img {
+    width: 100px;
+    /* height: 100px;  REMOVED HEIGHT */
+    /* border-radius: 50%; */
+    /* object-fit: cover; */
+    margin-right: 20px;
+}
+
+.image-lara-container div {
+    font-size: 2em;
+    font-weight: bold;
+    color: #555;
+}
+
+.buttons button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .image-lara-container {
+        flex-direction: column;
+    }
+    .image-lara-container img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+ttom: 0.5em;
+}
+
+#info-page ul {
+    list-style-type: disc;
+    padding-left: 2em;
+    margin-bottom: 1em;
+}
+
+#info-page li {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+#back-button {
+    background-color: #222;
+    color: #fff;
+    border: none;
+    padding: 0.7em 1.5em;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 2em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#back-button:hover {
+    background-color: #444;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 0.7;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotateDown {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(180deg); /* Move down slightly */
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+ 0.7;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotateDown {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(180deg); /* Move down slightly */
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
 }
