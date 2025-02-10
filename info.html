@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot Help List</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.1rem;
+            margin: 20px 0;
+        }
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 30px;
+            background: none;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+        .back-button:hover {
+            color: #1a73e8;
+        }
+        .commands-list {
+            text-align: left;
+            font-size: 1.1rem;
+            margin-top: 30px;
+        }
+        .commands-list p {
+            margin: 10px 0;
+        }
+        footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back()">&#60;</button> <!-- Back button with < sign -->
+    
+    <h1>Bot Help List</h1>
+    <p>🌟 Ultimate Bot Commands</p>
+    <p>Bot Prefix: "-"</p>
+
+    <div class="commands-list">
+        <h2>💰 Economy</h2>
+        <p>-balance, -work, -daily</p>
+        <p>-pay @user &lt;amount&gt;</p>
+
+        <h2>📞 Userphone</h2>
+        <p>-setphone &lt;number&gt;, -call &lt;number&gt;</p>
+        <p>-sms &lt;number&gt; &lt;message&gt;</p>
+
+        <h2>🎲 Random Chat</h2>
+        <p>-randomchat, -hangup</p>
+        <p>-setcallchannel &lt;#channel&gt;</p>
+
+        <h2>💍 Social</h2>
+        <p>-marry @user, -divorce, -profile</p>
+        <p>-setbirthday &lt;MM-DD&gt;, -adopt @user</p>
+
+        <h2>⚙️ Admin</h2>
+        <p>-toggle &lt;feature&gt; &lt;on/off&gt;</p>
+        <p>-settings</p>
+        <p>-setlevelchannel &lt;#channel&gt;, -setcountingchannel &lt;#channel&gt;</p>
+        <p>-smartcounting &lt;on/off&gt;</p>
+        <p>-startgiveaway &lt;duration&gt; &lt;winners&gt; &lt;prize&gt;</p>
+
+        <h2>📊 Leveling</h2>
+        <p>-level</p>
+
+        <h2>🔢 Counting Game</h2>
+        <p>-setcountingchannel &lt;#channel&gt;, -smartcounting &lt;on/off&gt;</p>
+        <p>Enabled in set channel</p>
+    </div>
+
+    <footer>
+        <p>Made by X</p>
+    </footer>
+</body>
+</html>
