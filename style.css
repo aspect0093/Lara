@@ -91,6 +91,21 @@ body, html {
     padding: 20px;
 }
 
+/* Profile Image Styling */
+.profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+}
+
+.profile p {
+    font-size: 18px;
+    color: white;
+    margin-top: 10px;
+}
+
 /* Buttons Styling */
 .buttons button {
     margin: 10px;
@@ -158,6 +173,40 @@ body, html {
     50% { border-color: transparent; }
 }
 
+/* Info Page Styling */
+#info-page {
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: auto;
+    background-color: #222222;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.commands-list h2 {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.commands-list p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
 /* Motion Blur and Smooth Scroll Effect */
 body {
     transition: all 0.3s ease-in-out; /* Add smooth transitions */
@@ -165,24 +214,4 @@ body {
 
 html {
     scroll-behavior: smooth;
-}
-
-h1, p, footer {
-    animation: fadeIn 2s ease-in-out; /* Fade-in effect for elements */
-}}73e8;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink {
-    50% { border-color: transparent; }
 }
