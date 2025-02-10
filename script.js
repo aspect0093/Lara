@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     // Splash Screen Timer
     setTimeout(() => {
@@ -41,8 +42,8 @@ function startTypingAnimation(elementId, text) {
         }
     }
 
-    element.innerHTML = "";
-    typeCharacter();
+    element.innerHTML = ""; // Clear any existing text
+    typeCharacter(); // Start the typing effect
 }
 
 // Redirect Function

@@ -9,7 +9,7 @@ body, html {
     background-color: black;
     color: white;
     text-align: center;
-    overflow: hidden;
+    overflow-y: auto; /* Allow scrolling */
 }
 
 /* Splash Screen */
@@ -68,6 +68,7 @@ body, html {
     overflow: hidden;
     border-right: 2px solid white;
     animation: typing 3s steps(20, end), blink 1s infinite;
+    display: inline-block; /* Keep cursor inline with text */
 }
 
 #swipe-up {
@@ -90,11 +91,12 @@ body, html {
 #profile-img {
     width: 100px;
     height: 100px;
-    border-radius: 50%;  /* Ensures a perfect circle */
-    object-fit: cover;  /* Ensures the image fits within the circle */
-    border: 2px solid white; /* Optional: Adds a border around the image */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
 }
 
+/* Buttons Styling */
 .buttons button {
     margin: 10px;
     padding: 10px 20px;
@@ -109,6 +111,59 @@ body, html {
 
 .buttons button:hover {
     transform: scale(1.1);
+}
+
+/* Commands List Page (Info Page) */
+#info-page {
+    padding: 20px;
+    margin-top: 80px; /* Allow space from top */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: auto; /* Enable scrolling for long content */
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.commands-list {
+    text-align: left;
+    font-size: 1.1rem;
+    margin-top: 30px;
+    padding: 0 20px; /* Add padding to avoid text sticking to edges */
+}
+
+.commands-list p {
+    margin: 10px 0;
+}
+
+footer {
+    position: relative;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* Back Button Styling */
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.back-button:hover {
+    color: #1a73e8;
 }
 
 /* Animations */
