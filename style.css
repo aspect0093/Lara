@@ -9,7 +9,11 @@ body, html {
     background-color: #121212;
     color: #fff;
     text-align: center;
-    overflow-y: auto;
+    overflow-y: auto; /* Allow scrolling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 /* Splash Screen */
@@ -60,6 +64,8 @@ body, html {
     background-color: #222222;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1; /* To avoid being hidden under footer */
 }
 
 h1 {
@@ -79,18 +85,7 @@ h1 {
     line-height: 1.5;
 }
 
-footer {
-    position: fixed;
-    bottom: 10px;
-    width: 100%;
-    text-align: center;
-    font-size: 14px;
-    opacity: 0.7;
-    z-index: 10;
-    padding: 10px;
-}
-
-/* Footer Blur Box */
+/* Footer with blur */
 .footer-blur {
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
@@ -103,6 +98,7 @@ footer {
     text-align: center;
     padding: 10px;
     border-top: 1px solid #1a73e8;
+    z-index: 999; /* Ensure it's above all content */
 }
 
 /* Back Button Styling */
@@ -136,44 +132,31 @@ footer {
 
 @keyframes blink {
     50% { border-color: transparent; }
-}t: auto;
-    margin-right: auto;
-    overflow-y: auto;
-    background-color: #222222; /* Slightly lighter background for info page */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Drop shadow for depth */
 }
 
-/* Centered Titles and text with margins */
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+/* Smooth Scroll and motion blur effect */
+body {
+    transition: all 0.3s ease-in-out; /* Add smooth scrolling transitions */
 }
 
-.commands-list {
-    text-align: left;
-    font-size: 1.1rem;
-    margin-top: 30px;
-    padding: 0 20px;
+html {
+    scroll-behavior: smooth;
 }
 
-.commands-list p {
-    margin: 10px 0;
-    line-height: 1.5;
+h1, p, footer {
+    animation: fadeIn 2s ease-in-out; /* Fade-in effect for elements */
 }
 
-footer {
-    position: fixed;
-    bottom: 10px;
-    width: 100%;
-    text-align: center;
-    font-size: 14px;
-    opacity: 0.7;
-}
-
-/* Back Button Styling */
-.back-button {
-    position: fixed;
+/* Typing Animation: Cursor stays close to the text */
+#typing-text {
+    font-size: 32px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid white;
+    animation: typing 3s steps(20, end), blink 1s infinite;
+    display: inline-block;
+    margin-right: 5px; /* Reduced space between text and cursor */
+}   position: fixed;
     top: 20px;
     left: 20px;
     font-size: 30px;

@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     // Splash Screen Timer
     setTimeout(() => {
@@ -49,4 +48,4 @@ function startTypingAnimation(elementId, text) {
 // Redirect Function
 function redirectTo(url) {
     window.location.href = url;
-}
+}}
